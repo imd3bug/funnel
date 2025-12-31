@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MABAC Media Mentorship - Scale to $300k/mo</title>
+  <meta name="description" content="Join elite affiliates scaling CPI campaigns to $300k/mo with proven systems, expert mentorship, and proprietary tools.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='4' ry='4' fill='%23000000' stroke='%23ffffff' stroke-width='2'/%3E%3Ctext x='16' y='23' font-family='Arial, sans-serif' font-size='22' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3E%3E%3C/text%3E%3C/svg%3E">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: #0f0f0f;
+      color: #fff;
+      font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.03; }
+      50% { opacity: 0.06; }
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(255,255,255,0.1); }
+      50% { box-shadow: 0 0 40px rgba(255,255,255,0.2); }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Utility Classes */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-padding {
+      padding: 120px 24px;
+    }
+
+    @media (max-width: 768px) {
+      .section-padding {
+        padding: 80px 24px;
+      }
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .nav-logo-text {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      background: #fff;
+      color: #000;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .cta-button:hover {
+      background: transparent;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(255,255,255,0.2);
+    }
+
+    .cta-button-outline {
+      background: transparent;
+      color: #fff;
+    }
+
+    .cta-button-outline:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 160px 24px 80px;
+      position: relative;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%);
+    }
+
+    .grid-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .hero-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 24px;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .hero-title {
+      font-size: clamp(40px, 8vw, 72px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -2px;
+      animation: fadeInUp 0.8s ease 0.1s forwards;
+      opacity: 0;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.7);
+      max-width: 700px;
+      margin: 0 auto 48px;
+      animation: fadeInUp 0.8s ease 0.2s forwards;
+      opacity: 0;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease 0.3s forwards;
+      opacity: 0;
+    }
+
+    .cta-button-large {
+      padding: 18px 36px;
+      font-size: 16px;
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    /* Proof Section */
+    .proof-section {
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 80px 24px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+
+    .proof-item {
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .proof-item:nth-child(1) { animation-delay: 0.1s; }
+    .proof-item:nth-child(2) { animation-delay: 0.2s; }
+    .proof-item:nth-child(3) { animation-delay: 0.3s; }
+
+    .proof-number {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #fff, rgba(255,255,255,0.5));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .proof-label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Problem Section */
+    .problem-section {
+      padding: 120px 24px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 80px;
+    }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 6vw, 56px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .problem-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .problem-card:hover {
+      border-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-4px);
+    }
+
+    .problem-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+      opacity: 0.6;
+    }
+
+    .problem-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .problem-description {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    /* Solution Section */
+    .solution-section {
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 120px 24px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 968px) {
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .benefit-list {
+      list-style: none;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding: 20px;
+      background: rgba(255,255,255,0.02);
+      border-left: 3px solid #fff;
+      border-radius: 8px;
+      animation: slideIn 0.6s ease forwards;
+      opacity: 0;
+    }
+
+    .benefit-item:nth-child(1) { animation-delay: 0.1s; }
+    .benefit-item:nth-child(2) { animation-delay: 0.2s; }
+    .benefit-item:nth-child(3) { animation-delay: 0.3s; }
+    .benefit-item:nth-child(4) { animation-delay: 0.4s; }
+
+    .benefit-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .benefit-content h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .benefit-content p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    .stats-box {
+      background: #0a0a0a;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-item:last-child {
+      border-bottom: none;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .stat-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 20px;
+      font-weight: 600;
+      color: #28DC50;
+    }
+
+    /* What You Get Section */
+    .features-section {
+      padding: 120px 24px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      border-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .feature-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .feature-description {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 120px 24px;
+    }
+
+    .pricing-container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pricing-box {
+      background: #0a0a0a;
+      border: 2px solid #fff;
+      border-radius: 16px;
+      padding: 48px;
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-box::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #fff, rgba(255,255,255,0.3));
+      border-radius: 16px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .pricing-box:hover::before {
+      opacity: 0.1;
+    }
+
+    .pricing-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
+    }
+
+    .pricing-amount {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 72px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .pricing-period {
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 32px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 32px;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 15px;
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-features .check {
+      color: #28DC50;
+      font-size: 20px;
+    }
+
+    .value-stack {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 24px;
+      text-align: left;
+    }
+
+    .value-stack h4 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
+    }
+
+    .value-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+
+    .value-item span:first-child {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .value-item span:last-child {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 600;
+    }
+
+    .value-total {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 2px solid rgba(255,255,255,0.2);
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .value-total span:last-child {
+      color: #28DC50;
+    }
+
+    /* Contract Modal Styles */
+    .contract-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 20px;
+    }
+
+    .contract-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .contract-modal-content {
+      background: #0a0a0a;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 900px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(20px) scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    .contract-modal.active .contract-modal-content {
+      transform: translateY(0) scale(1);
+    }
+
+    .contract-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.02);
+      border-radius: 16px 16px 0 0;
+    }
+
+    .contract-modal-header h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contract-modal-close {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.7);
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .contract-modal-close:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .contract-modal-body {
+      padding: 32px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .contract-content {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .contract-content h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .contract-content h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 32px 0 16px 0;
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 8px;
+    }
+
+    .contract-content h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 24px 0 12px 0;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .contract-content p {
+      margin-bottom: 16px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .contract-content strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .contract-content ul {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+
+    .contract-content li {
+      margin-bottom: 8px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .contract-section {
+      margin-bottom: 32px;
+      padding: 24px;
+      background: rgba(255,255,255,0.02);
+      border-left: 3px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+    }
+
+    .contract-highlight {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .contract-warning {
+      background: rgba(255, 95, 87, 0.1);
+      border: 1px solid rgba(255, 95, 87, 0.3);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .contract-warning strong {
+      color: #ff5f57;
+    }
+
+    @media (max-width: 768px) {
+      .contract-modal {
+        padding: 0;
+      }
+
+      .contract-modal-content {
+        max-width: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+      }
+
+      .contract-modal-header {
+        padding: 20px;
+        border-radius: 0;
+      }
+
+      .contract-modal-body {
+        padding: 20px;
+      }
+
+      .contract-content h1 {
+        font-size: 22px;
+      }
+
+      .contract-content h2 {
+        font-size: 18px;
+      }
+    }
+
+    /* Guarantee Section */
+    .guarantee-section {
+      padding: 80px 24px;
+    }
+
+    .guarantee-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+    }
+
+    .guarantee-icon {
+      font-size: 64px;
+      margin-bottom: 24px;
+    }
+
+    .guarantee-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .guarantee-text {
+      font-size: 16px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 120px 24px;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 24px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .faq-toggle {
+      font-size: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-answer-content {
+      padding: 0 24px 24px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+
+    /* Final CTA Section */
+    .final-cta-section {
+      padding: 160px 24px;
+      text-align: center;
+    }
+
+    .final-cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .final-cta-title {
+      font-size: clamp(32px, 6vw, 56px);
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .final-cta-subtitle {
+      font-size: 18px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-link {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+    }
+
+    .footer-copyright {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 16px 24px;
+      }
+
+      .hero-title {
+        font-size: 36px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .pricing-amount {
+        font-size: 56px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-icon">&gt;</div>
+      <span class="nav-logo-text">MABAC media</span>
+    </div>
+    <a href="https://whop.com/checkout/plan_WHbBzMwnO6Cqe?a=fba" class="cta-button">Apply Now</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="grid-bg"></div>
+    <div class="hero-content">
+      <div class="hero-label">// ELITE MENTORSHIP PROGRAM</div>
+      <h1 class="hero-title">Scale Your CPI Campaigns to $300k/mo</h1>
+      <p class="hero-subtitle">
+        Join the same mentorship program that helped affiliates go from $0 to $300k/month running mobile app install campaigns. Stop guessing. Start scaling.
+      </p>
+      <div class="hero-cta-group">
+        <a href="https://whop.com/checkout/plan_WHbBzMwnO6Cqe?a=fba" class="cta-button cta-button-large">Apply for Mentorship</a>
+        <a href="#learn-more" class="cta-button cta-button-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof Section -->
+  <section class="proof-section">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+      <div class="proof-grid">
+        <div class="proof-item">
+          <div class="proof-number">$300k</div>
+          <div class="proof-label">Monthly Revenue Achieved</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-number">2-3x</div>
+          <div class="proof-label">Average ROAS on Campaigns</div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-number">5+</div>
+          <div class="proof-label">Expert Mentors</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="problem-section" id="learn-more">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+      <div class="section-header">
+        <div class="section-label">// THE PROBLEM</div>
+        <h2 class="section-title">Why Most Affiliates Fail</h2>
+        <p class="section-subtitle">
+          You're burning money on ads, watching competitors scale, and stuck in the cycle of testing without results.
+        </p>
+      </div>
+      
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">⚠️</div>
+          <h3 class="problem-title">No Clear System</h3>
+          <p class="problem-description">
+            You're following outdated YouTube tutorials and generic advice that doesn't work anymore. No proven playbook to follow.
+          </p>
+        </div>
+        
+        <div class="problem-card">
+          <div class="problem-icon">💸</div>
+          <h3 class="problem-title">Wasted Ad Spend</h3>
+          <p class="problem-description">
+            Every dollar spent on testing feels like a gamble. You don't know what works until you've already lost money.
+          </p>
+        </div>
+        
+        <div class="problem-card">
+          <div class="problem-icon">🔄</div>
+          <h3 class="problem-title">Can't Scale Winners</h3>
+          <p class="problem-description">
+            You find a winning ad, but don't know how to scale it without killing performance. Stuck at low spend.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="solution-section">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+      <div class="two-col">
+        <div>
+          <div class="section-label">// THE SOLUTION</div>
+          <h2 class="section-title">The Exact System We Use</h2>
+          <p class="section-subtitle" style="margin-bottom: 40px;">
+            This isn't theory. This is the exact methodology we've used to scale campaigns to $300k/month consistently.
+          </p>
+          
+          <ul class="benefit-list">
+            <li class="benefit-item">
+              <div class="benefit-icon">🎯</div>
+              <div class="benefit-content">
+                <h4>Steal, Test, Scale Framework</h4>
+                <p>Learn how to identify winning TikTok ads, test them across geos, and scale aggressively at 2-3x ROAS.</p>
+              </div>
+            </li>
+            
+            <li class="benefit-item">
+              <div class="benefit-icon">🛠️</div>
+              <div class="benefit-content">
+                <h4>Proprietary Tools & Automation</h4>
+                <p>Get access to our media buying automation, pixel tracking systems, and conversion optimization tools.</p>
+              </div>
+            </li>
+            
+            <li class="benefit-item">
+              <div class="benefit-icon">👥</div>
+              <div class="benefit-content">
+                <h4>Multiple Expert Mentors</h4>
+                <p>Work directly with affiliates who've been there. Max, Tau, Mike, Brian, and 37 — all actively scaling.</p>
+              </div>
+            </li>
+            
+            <li class="benefit-item">
+              <div class="benefit-icon">📊</div>
+              <div class="benefit-content">
+                <h4>Live Campaign Reviews</h4>
+                <p>Weekly calls where we review your campaigns, fix issues, and show you exactly what to do next.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <div class="stats-box">
+            <div class="stat-item">
+              <span class="stat-label">Avg. Time to First Profit</span>
+              <span class="stat-value">10 Days</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Avg. Monthly Ad Spend</span>
+              <span class="stat-value">$50k+</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Success Rate (Students)</span>
+              <span class="stat-value">87%</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Avg. Campaign ROAS</span>
+              <span class="stat-value">2.5x</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+      <div class="section-header">
+        <div class="section-label">// WHAT'S INCLUDED</div>
+        <h2 class="section-title">Everything You Need to Scale</h2>
+        <p class="section-subtitle">
+          This is the most comprehensive affiliate marketing mentorship program built by people actively running campaigns.
+        </p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+          <h3 class="feature-title">Complete A-Z Training</h3>
+          <p class="feature-description">
+            TikTok, Facebook, Google campaigns. Ad creation to scaling. Everything documented in our learning portal.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3 class="feature-title">Private Discord Access</h3>
+          <p class="feature-description">
+            24/7 access to our community. Ask questions, share wins, get feedback from people actually doing this.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📞</div>
+          <h3 class="feature-title">Weekly Group Calls</h3>
+          <p class="feature-description">
+            Live campaign reviews, Q&A sessions, and strategy calls with mentors who are in the trenches.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3 class="feature-title">Millian AI Access</h3>
+          <p class="feature-description">
+            Our proprietary AI automation tool for media buyers. Optimize campaigns and automate workflows.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3 class="feature-title">Proxy Solutions</h3>
+          <p class="feature-description">
+            Premium proxy access through Proxy Purpose. Built for affiliate marketers running high-volume ops.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎬</div>
+          <h3 class="feature-title">Creative Library</h3>
+          <p class="feature-description">
+            Access to proven ad creatives, UGC templates, and editing workflows that convert.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="apply">
+    <div class="container" style="max-width: 900px; margin: 0 auto;">
+      <div class="pricing-container">
+        <div class="section-header">
+          <div class="section-label">// INVESTMENT</div>
+          <h2 class="section-title">Join the Elite</h2>
+          <p class="section-subtitle">
+            This is not for everyone. This is for serious affiliates ready to invest in their business and put in the work.
+          </p>
+        </div>
+        
+        <div class="pricing-box">
+          <div class="pricing-label">One-Time Payment</div>
+          <div class="pricing-amount">$2,500</div>
+          <div class="pricing-period">Lifetime Access</div>
+          
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Complete training modules (TikTok, FB, Google)</li>
+            <li><span class="check">✓</span> Private Discord community</li>
+            <li><span class="check">✓</span> Weekly mentorship calls (live)</li>
+            <li><span class="check">✓</span> Millian AI tool access</li>
+            <li><span class="check">✓</span> Proxy Purpose premium proxies</li>
+            <li><span class="check">✓</span> Creative library & templates</li>
+            <li><span class="check">✓</span> Direct mentor support</li>
+            <li><span class="check">✓</span> Campaign review & optimization</li>
+          </ul>
+          
+          <div class="value-stack">
+            <h4>Total Value Breakdown</h4>
+            <div class="value-item">
+              <span>Complete Training Course</span>
+              <span>$1,997</span>
+            </div>
+            <div class="value-item">
+              <span>Weekly Mentorship Calls</span>
+              <span>$997/mo</span>
+            </div>
+            <div class="value-item">
+              <span>Millian AI Access</span>
+              <span>$297/mo</span>
+            </div>
+            <div class="value-item">
+              <span>Premium Proxies</span>
+              <span>$197/mo</span>
+            </div>
+            <div class="value-item">
+              <span>Creative Library</span>
+              <span>$497</span>
+            </div>
+            <div class="value-total">
+              <span>Total Value:</span>
+              <span>$12,000+</span>
+            </div>
+          </div>
+          
+          <a href="https://whop.com/checkout/plan_WHbBzMwnO6Cqe?a=fba" class="cta-button cta-button-large" style="width: 100%; margin-top: 32px;">
+            Apply Now for $2,500
+          </a>
+        </div>
+
+        <!-- Klarna Payment Option -->
+        <div style="margin-top: 40px; padding: 40px; background: rgba(255,255,255,0.03); border: 2px solid rgba(255,255,255,0.15); border-radius: 16px; text-align: center;">
+          <div style="margin-bottom: 24px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px;">
+              // FLEXIBLE PAYMENT
+            </div>
+            <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 16px; line-height: 1.3;">
+              Can't Pay $2.5k Upfront?<br>
+              <span style="color: rgba(255,255,255,0.6);">That's Fine.</span>
+            </h3>
+            <p style="font-size: 16px; color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto 24px; line-height: 1.6;">
+              Use <strong style="color: #fff;">Klarna</strong> and pay as little as <strong style="color: #28DC50;">$120/month</strong>. Learn how to scale ads now, become profitable, and let your returns pay for the program.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px 32px; max-width: 400px; width: 100%;">
+              <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; margin-bottom: 20px;">
+                <div>
+                  <div style="font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 4px;">Total Investment</div>
+                  <div style="font-size: 20px; font-weight: 600; color: rgba(255,255,255,0.6); text-decoration: line-through;">$2,500</div>
+                </div>
+                <div style="color: rgba(255,255,255,0.3); font-size: 24px;">→</div>
+                <div>
+                  <div style="font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 4px;">Monthly Payment</div>
+                  <div style="font-size: 24px; font-weight: 700; color: #28DC50; font-family: 'IBM Plex Mono', monospace;">$120/mo</div>
+                </div>
+              </div>
+              
+              <div style="padding: 16px; background: rgba(40,220,80,0.1); border: 1px solid rgba(40,220,80,0.2); border-radius: 8px; margin-bottom: 20px;">
+                <div style="font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 8px;">
+                  <strong style="color: #28DC50;">✓</strong> Start learning immediately
+                </div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 8px;">
+                  <strong style="color: #28DC50;">✓</strong> Launch profitable campaigns within weeks
+                </div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.8);">
+                  <strong style="color: #28DC50;">✓</strong> Let your ad profits cover payments
+                </div>
+              </div>
+
+              <a 
+                href="https://buy.stripe.com/5kQaEX0LlexF36tgIv9EI0f" 
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 10px;
+                  width: 100%;
+                  max-width: 400px;
+                  padding: 16px 32px;
+                  background: #FFB3C7;
+                  border: 2px solid #FFB3C7;
+                  border-radius: 8px;
+                  color: #000;
+                  font-family: 'IBM Plex Mono', monospace;
+                  font-size: 16px;
+                  font-weight: 700;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-decoration: none;
+                "
+                onmouseover="this.style.background='#FFA0B8'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 30px rgba(255,179,199,0.3)'"
+                onmouseout="this.style.background='#FFB3C7'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                Pay with Klarna
+              </a>
+            </div>
+
+            <p style="font-size: 13px; color: rgba(255,255,255,0.4); font-family: 'IBM Plex Mono', monospace; max-width: 450px;">
+              Most students recoup their investment within the first 30 days. Start now, scale fast, and let the program pay for itself.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantee Section -->
+  <section class="guarantee-section">
+    <div class="container" style="max-width: 900px; margin: 0 auto;">
+      <div class="guarantee-box">
+        <div class="guarantee-icon">🛡️</div>
+        <h3 class="guarantee-title">Why $2,500?</h3>
+        <p class="guarantee-text">
+          This price filters out people who aren't serious. You get direct access to multiple expert mentors actively scaling campaigns to $300k/month. We're not selling a course — we're giving you the exact systems, tools, and support we use daily.
+        </p>
+        <p class="guarantee-text">
+          If you're not willing to invest $2,500 in your business, you're not ready to spend $10k+/month on ads. This program is for people who are committed to making this work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container" style="max-width: 900px; margin: 0 auto;">
+      <div class="faq-container">
+        <div class="section-header">
+          <div class="section-label">// FAQ</div>
+          <h2 class="section-title">Common Questions</h2>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Do I need money for ad spend?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Yes. You need capital to run ads. If you have zero money, talk to us directly — we may be able to cover initial ad spend in select cases, but you need to communicate upfront.
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Is this guaranteed to work?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              No. Success is earned, not guaranteed. We give you proven systems, expert mentorship, and all the tools. You have to put in the work. 87% of our students see results within 30 days.
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What if I'm a complete beginner?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Perfect. Our training starts from zero. We cover everything from understanding the business model to launching your first campaign. You just need to be willing to learn and execute.
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How is this different from other courses?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              We're not selling theory. We're actively running campaigns and scaling to $300k/month. You get direct access to us, our tools, and our exact playbooks. Plus weekly calls where we review your actual campaigns.
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Can I get a refund?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Yes, through our 90-Day Money-Back Guarantee. You must complete 100% of course materials, invest minimum $500 in ad spend testing strategies, attend 80% of coaching calls, submit work for review, and provide documented proof of implementation. If you meet ALL requirements and still don't recoup your investment, we refund 100%. This isn't a "no questions asked" refund—it's performance-based and rewards genuine effort.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contracts Section -->
+  <section class="contracts-section" style="padding: 80px 24px; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.1);">
+    <div class="container" style="max-width: 900px; margin: 0 auto;">
+      <div class="section-header" style="text-align: center; margin-bottom: 48px;">
+        <div class="section-label">// LEGAL & TRANSPARENCY</div>
+        <h2 class="section-title">Review the Contracts</h2>
+        <p class="section-subtitle">
+          We believe in complete transparency. Review our mentorship agreement and guarantee terms before you join.
+        </p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <div class="contract-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 32px; transition: all 0.3s ease;">
+          <div style="font-size: 40px; margin-bottom: 16px;">📄</div>
+          <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">Mentorship Agreement</h3>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 24px;">
+            Complete participant agreement covering program terms, confidentiality, payment terms, and all legal obligations.
+          </p>
+          <button onclick="openContractModal('agreement')" class="cta-button cta-button-outline" style="width: 100%; text-align: center; padding: 12px 20px; font-size: 14px; border: none;">
+            View Agreement
+          </button>
+        </div>
+        
+        <div class="contract-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 32px; transition: all 0.3s ease;">
+          <div style="font-size: 40px; margin-bottom: 16px;">✅</div>
+          <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">90-Day Guarantee</h3>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 24px;">
+            Performance-based refund policy. See exact requirements you must meet to qualify for a full refund.
+          </p>
+          <button onclick="openContractModal('guarantee')" class="cta-button cta-button-outline" style="width: 100%; text-align: center; padding: 12px 20px; font-size: 14px; border: none;">
+            View Guarantee
+          </button>
+        </div>
+      </div>
+      
+      <div style="margin-top: 40px; padding: 24px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; text-align: center;">
+        <p style="font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0;">
+          <strong style="color: #fff;">Important:</strong> By purchasing, you agree to both the Mentorship Agreement and 90-Day Guarantee terms. These documents will be provided upon enrollment for electronic signature.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .contract-card:hover {
+      border-color: rgba(255,255,255,0.4) !important;
+      background: rgba(255,255,255,0.05) !important;
+      transform: translateY(-4px);
+    }
+  </style>
+
+  <!-- Final CTA Section -->
+  <section class="final-cta-section">
+    <div class="grid-bg"></div>
+    <div class="final-cta-content" style="max-width: 800px; margin: 0 auto;">
+      <h2 class="final-cta-title">Ready to Scale?</h2>
+      <p class="final-cta-subtitle">
+        Stop watching from the sidelines. Join the program and start scaling campaigns with proven systems and expert mentorship.
+      </p>
+      <a href="https://whop.com/checkout/plan_WHbBzMwnO6Cqe?a=fba" class="cta-button cta-button-large">
+        Apply for Mentorship — $2,500
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="nav-logo-icon">&gt;</div>
+        <span class="nav-logo-text">MABAC media</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://learn.mabacmedia.com/" class="footer-link">Learn</a>
+        <a href="https://discord.gg/4jQytF5hvh" class="footer-link">Discord</a>
+        <a href="https://app.mabacmedia.com/" class="footer-link">Network</a>
+      </div>
+      <div class="footer-copyright">© 2025 MABAC media</div>
+    </div>
+  </footer>
+
+  <!-- Contract Modals -->
+  <div class="contract-modal" id="agreementModal" onclick="closeContractModal(event, 'agreement')">
+    <div class="contract-modal-content" onclick="event.stopPropagation()">
+      <div class="contract-modal-header">
+        <h3><span>📄</span> Mentorship Agreement</h3>
+        <button class="contract-modal-close" onclick="closeContractModal(event, 'agreement')">×</button>
+      </div>
+      <div class="contract-modal-body">
+        <div class="contract-content" id="agreementContent">
+          <!-- Agreement content will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contract-modal" id="guaranteeModal" onclick="closeContractModal(event, 'guarantee')">
+    <div class="contract-modal-content" onclick="event.stopPropagation()">
+      <div class="contract-modal-header">
+        <h3><span>✅</span> 90-Day Money-Back Guarantee</h3>
+        <button class="contract-modal-close" onclick="closeContractModal(event, 'guarantee')">×</button>
+      </div>
+      <div class="contract-modal-body">
+        <div class="contract-content" id="guaranteeContent">
+          <!-- Guarantee content will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Contract content data
+    const contractContent = {
+      agreement: `
+        <h1>MABAC MEDIA MENTORSHIP</h1>
+        <p style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 32px;">Participant Agreement & Terms of Service</p>
+
+        <div class="contract-section">
+          <h2>1. PROGRAM OVERVIEW</h2>
+          <p>This Agreement governs your participation in the Mabac Media Mentorship program. By purchasing and accessing the program, you agree to all terms outlined in this document.</p>
+          
+          <h3>What's Included:</h3>
+          <ul>
+            <li><strong>Course Content:</strong> Access to pre-recorded video modules covering performance marketing, affiliate marketing, and digital advertising strategies</li>
+            <li><strong>Templates & Resources:</strong> Downloadable templates, swipe files, checklists, and other resources</li>
+            <li><strong>Community Access:</strong> Access to the private Discord community for peer support and networking</li>
+            <li><strong>Group Coaching:</strong> Access to scheduled group coaching calls</li>
+            <li><strong>Email Support:</strong> Support for program-related questions</li>
+          </ul>
+        </div>
+
+        <div class="contract-section">
+          <h2>2. PAYMENT TERMS</h2>
+          <p><strong>Program Investment:</strong> $2,500 one-time payment or payment plan option</p>
+          <p>All payments are final once course materials have been accessed, except as provided in the 90-Day Money-Back Guarantee.</p>
+          
+          <div class="contract-warning">
+            <p><strong>IMPORTANT - NO UNAUTHORIZED CHARGEBACKS:</strong></p>
+            <p>You expressly agree NOT to initiate any chargeback or payment dispute without first completing the 90-Day Money-Back Guarantee process. Unauthorized chargebacks will result in immediate termination of access and collection proceedings.</p>
+          </div>
+        </div>
+
+        <div class="contract-section">
+          <h2>3. CONFIDENTIALITY & INTELLECTUAL PROPERTY</h2>
+          <p>All course materials are proprietary and confidential. You agree to:</p>
+          <ul>
+            <li>NOT share, copy, reproduce, or distribute any course materials</li>
+            <li>NOT share login credentials with anyone</li>
+            <li>NOT record or screen-capture any content</li>
+            <li>NOT use materials to create competing products or services</li>
+          </ul>
+          
+          <div class="contract-highlight">
+            <p><strong>Violation Penalty:</strong> Breach of confidentiality may result in liquidated damages of $50,000 per violation plus immediate termination of access without refund.</p>
+          </div>
+        </div>
+
+        <div class="contract-section">
+          <h2>4. NON-SOLICITATION</h2>
+          <p>You agree NOT to:</p>
+          <ul>
+            <li>Recruit or solicit other program participants for competing programs</li>
+            <li>Collect or export community member lists</li>
+            <li>Hire or solicit Company staff or contractors</li>
+          </ul>
+          <p><strong>Term:</strong> During program participation and 12 months after</p>
+          <p><strong>Violation Penalty:</strong> $10,000 per violation</p>
+        </div>
+
+        <div class="contract-section">
+          <h2>5. DISCLAIMERS</h2>
+          <div class="contract-warning">
+            <p><strong>NO INCOME GUARANTEES:</strong> Results vary based on effort, market conditions, and other factors. Company makes NO guarantees regarding income, profits, or specific results. Success requires effort and involves risk.</p>
+          </div>
+          <p>This is an educational program. Individual results will vary. Any earnings statements are examples only, not promises of typical results.</p>
+        </div>
+
+        <div class="contract-section">
+          <h2>6. PLATFORM DEPENDENCY</h2>
+          <p>Strategies taught rely on third-party platforms (Meta, TikTok, Google, etc.). Company has no control over platform changes, account actions, or policy updates. Company is not liable for platform-related issues.</p>
+        </div>
+
+        <div class="contract-section">
+          <h2>7. LIMITATION OF LIABILITY</h2>
+          <p>Company's total liability shall not exceed the amount you paid for the program. Company is not liable for indirect, incidental, or consequential damages.</p>
+        </div>
+
+        <div class="contract-section">
+          <h2>8. DISPUTE RESOLUTION</h2>
+          <div class="contract-highlight">
+            <p><strong>BINDING ARBITRATION:</strong> Any disputes will be resolved by binding arbitration in Dallas County, Texas. You waive the right to participate in class actions or jury trials.</p>
+          </div>
+          <p><strong>Governing Law:</strong> Texas law applies</p>
+          <p><strong>Attorney's Fees:</strong> Prevailing party recovers legal fees</p>
+        </div>
+
+        <div class="contract-section">
+          <h2>9. GENERAL PROVISIONS</h2>
+          <p><strong>Age Requirement:</strong> Must be 18+ or have parental consent</p>
+          <p><strong>Independent Relationship:</strong> You are not an employee, partner, or agent of Company</p>
+          <p><strong>Electronic Signature:</strong> Electronic acceptance is legally binding</p>
+          <p><strong>Access Logging:</strong> All access and usage is tracked for verification purposes</p>
+        </div>
+
+        <div class="contract-highlight" style="margin-top: 40px;">
+          <p style="text-align: center; margin: 0;"><strong>By purchasing, you acknowledge you have read and agree to all terms of this Agreement.</strong></p>
+        </div>
+      `,
+      
+      guarantee: `
+        <h1>90-DAY MONEY-BACK GUARANTEE</h1>
+        <p style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 32px;">Performance-Based Refund Policy</p>
+
+        <div class="contract-highlight">
+          <h2 style="margin-top: 0;">OUR PROMISE</h2>
+          <p><strong>If you complete the entire program, implement the strategies taught, put in genuine effort for 90 days, and still do not recoup your program investment, we will refund 100% of your program fee.</strong></p>
+          <p>This is NOT a "no questions asked" refund. This is a performance-based guarantee that rewards effort and protects participants who genuinely try but don't achieve results.</p>
+        </div>
+
+        <div class="contract-section">
+          <h2>WHAT YOU MUST DO TO QUALIFY</h2>
+          <p style="color: #ff5f57; font-weight: 600;">You must complete ALL of the following requirements. Partial completion does not qualify.</p>
+          
+          <h3>1. Complete 100% of Course Materials</h3>
+          <ul>
+            <li>Watch every video module from start to finish</li>
+            <li>Complete all quizzes, worksheets, and exercises</li>
+            <li>Review all supplementary materials and resources</li>
+          </ul>
+          <p><em>Verification: Tracked via learning management system</em></p>
+
+          <h3>2. Implement the Strategies Taught</h3>
+          <ul>
+            <li>Set up proper tracking systems (RedTrack, pixels, conversion tracking)</li>
+            <li>Create at least 3 landing pages/funnels following templates</li>
+            <li>Launch advertising campaigns on at least one platform</li>
+            <li>Apply to and get approved by at least 2 affiliate networks</li>
+            <li>Test at least 5 different ad creatives or angles</li>
+          </ul>
+
+          <h3>3. Minimum Advertising Investment</h3>
+          <p><strong>Required: $500 minimum ad spend</strong> testing strategies during the 90-day period</p>
+          <p>Why? You cannot properly test campaigns without spending money on ads. $500 spread across 90 days is ~$5.50/day.</p>
+
+          <h3>4. Attend Coaching & Seek Support</h3>
+          <ul>
+            <li>Attend at least 80% of scheduled group coaching calls</li>
+            <li>Submit at least 5 substantive questions or support requests</li>
+            <li>Engage in community at least once per week</li>
+            <li>Submit at least 2 campaigns for review and feedback</li>
+          </ul>
+
+          <h3>5. Consistent Effort Over 90 Days</h3>
+          <ul>
+            <li>Show activity in at least 10 of the 12 weeks</li>
+            <li>"Activity" = logging in, running ads, community engagement, or contacting support</li>
+            <li>Cramming all activity into the last 2 weeks does not qualify</li>
+          </ul>
+
+          <h3>6. Respond to Satisfaction Checkpoints</h3>
+          <ul>
+            <li>Respond to Day 14 and Day 30 check-in emails within 7 days</li>
+            <li>Confirm access to materials and note any concerns</li>
+            <li>Failure to respond = deemed confirmation of satisfaction</li>
+          </ul>
+        </div>
+
+        <div class="contract-section">
+          <h2>DOCUMENTATION REQUIRED</h2>
+          <p>When requesting a refund, you must provide:</p>
+          <ul>
+            <li><strong>Ad Account Screenshots:</strong> Showing at least $500 in spend during 90 days</li>
+            <li><strong>Landing Page URLs:</strong> Live URLs or screenshots of at least 3 pages you created</li>
+            <li><strong>Tracking Setup Proof:</strong> Screenshots of tracking dashboard properly configured</li>
+            <li><strong>Network Approvals:</strong> Confirmation from at least 2 affiliate networks</li>
+            <li><strong>Ad Creative Examples:</strong> Screenshots of at least 5 different ad creatives tested</li>
+            <li><strong>Revenue Report:</strong> Earnings from affiliate networks during 90 days</li>
+            <li><strong>Written Summary:</strong> Minimum 500 words explaining what you did and why it didn't work</li>
+          </ul>
+        </div>
+
+        <div class="contract-section">
+          <h2>HOW TO REQUEST A REFUND</h2>
+          <p><strong>Timing:</strong> Submit between Day 75 and Day 97 of your program</p>
+          
+          <p><strong>Process:</strong></p>
+          <ol>
+            <li>Email support@mabacmedia.com with subject: "90-Day Guarantee Refund Request - [Your Name]"</li>
+            <li>Include all required documentation</li>
+            <li>Include your written summary</li>
+            <li>We review within 14 business days</li>
+            <li>Approved refunds processed within 14 business days via original payment method</li>
+          </ol>
+        </div>
+
+        <div class="contract-section">
+          <h2>WHAT DOES NOT QUALIFY</h2>
+          <div class="contract-warning">
+            <p><strong>You will NOT qualify if:</strong></p>
+            <ul>
+              <li>Incomplete course consumption (less than 100%)</li>
+              <li>Insufficient ad spend (less than $500)</li>
+              <li>Lack of implementation (didn't create pages, launch campaigns, etc.)</li>
+              <li>Non-participation (didn't attend calls or engage with support)</li>
+              <li>Missed satisfaction checkpoints at Day 14 and Day 30</li>
+              <li>Late refund request (after Day 97)</li>
+              <li>Incomplete or falsified documentation</li>
+              <li>Violation of program agreement terms</li>
+              <li>Initiated a chargeback at any time</li>
+              <li>Payment plan default</li>
+              <li><strong>Buyer's remorse, change of mind, lack of time, or change in financial situation</strong></li>
+              <li>You actually earned more than your program investment (you succeeded!)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="contract-section">
+          <h2>IMPORTANT CLARIFICATIONS</h2>
+          
+          <h3>This is NOT an Unconditional Guarantee</h3>
+          <p>We are offering: <strong>"Try everything we teach, put in real effort, and if it still doesn't work, we'll refund you."</strong></p>
+          <p>We are NOT offering: "Watch the course and get your money back."</p>
+
+          <h3>Definition of "Recoup Your Investment"</h3>
+          <p>Earning gross revenue equal to or greater than your program fee through the methods taught. If your program fee was $2,500 and you generated $2,500+ in affiliate commissions during the 90 days, you recouped your investment.</p>
+
+          <h3>No Chargebacks</h3>
+          <div class="contract-warning">
+            <p><strong>THIS GUARANTEE IS THE EXCLUSIVE REMEDY FOR REFUNDS.</strong></p>
+            <p>Initiating a chargeback instead of following this process permanently disqualifies you from the guarantee, regardless of whether other requirements were met.</p>
+          </div>
+        </div>
+
+        <div class="contract-highlight" style="margin-top: 40px;">
+          <p style="text-align: center; margin: 0;"><strong>This guarantee exists to protect serious participants who genuinely try but don't succeed. If you meet all requirements, you will receive your refund.</strong></p>
+        </div>
+      `
+    };
+
+    function openContractModal(type) {
+      const modal = document.getElementById(type + 'Modal');
+      const content = document.getElementById(type + 'Content');
+      
+      // Load content
+      content.innerHTML = contractContent[type];
+      
+      // Show modal
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeContractModal(event, type) {
+      event.stopPropagation();
+      const modal = document.getElementById(type + 'Modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const modals = document.querySelectorAll('.contract-modal.active');
+        modals.forEach(modal => {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+
+    function toggleFaq(element) {
+      const faqItem = element.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const isActive = faqItem.classList.contains('active');
+      
+      // Close all FAQs
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+        item.querySelector('.faq-answer').style.maxHeight = null;
+      });
+      
+      // Open clicked FAQ if it wasn't active
+      if (!isActive) {
+        faqItem.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
