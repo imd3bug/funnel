@@ -1012,7 +1012,7 @@
       <div class="nav-logo-icon">&gt;</div>
       <span class="nav-logo-text">MABAC media</span>
     </div>
-    <a href="https://whop.com/checkout/plan_WHbBzMwnO6Cqe?a=fba" class="cta-button">Apply Now</a>
+    <button onclick="openConfirmationModal()" class="cta-button">Apply Now</button>
   </nav>
 
   <!-- Hero Section -->
@@ -1025,7 +1025,7 @@
         Join the same mentorship program that helped affiliates go from $0 to $300k/month running mobile app install campaigns. Stop guessing. Start scaling.
       </p>
       <div class="hero-cta-group">
-        <a href="https://whop.com/checkout/plan_WHbBzMwnO6Cqe?a=fba" class="cta-button cta-button-large">Apply for Mentorship</a>
+        <button onclick="openConfirmationModal()" class="cta-button cta-button-large">Apply for Mentorship</button>
         <a href="#learn-more" class="cta-button cta-button-outline">Learn More</a>
       </div>
     </div>
@@ -1279,9 +1279,9 @@
             </div>
           </div>
           
-          <a href="https://whop.com/checkout/plan_WHbBzMwnO6Cqe?a=fba" class="cta-button cta-button-large" style="width: 100%; margin-top: 32px;">
+          <button onclick="openConfirmationModal()" class="cta-button cta-button-large" style="width: 100%; margin-top: 32px;">
             Apply Now for $2,500
-          </a>
+          </button>
         </div>
 
         <!-- Klarna Payment Option -->
@@ -1325,10 +1325,8 @@
                 </div>
               </div>
 
-              <a 
-                href="https://buy.stripe.com/5kQaEX0LlexF36tgIv9EI0f" 
-                target="_blank"
-                rel="noopener noreferrer"
+              <button 
+                onclick="openKlarnaConfirmation()"
                 style="
                   display: inline-flex;
                   align-items: center;
@@ -1346,7 +1344,6 @@
                   font-weight: 700;
                   cursor: pointer;
                   transition: all 0.3s ease;
-                  text-decoration: none;
                 "
                 onmouseover="this.style.background='#FFA0B8'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 30px rgba(255,179,199,0.3)'"
                 onmouseout="this.style.background='#FFB3C7'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
@@ -1356,7 +1353,7 @@
                   <line x1="1" y1="10" x2="23" y2="10"></line>
                 </svg>
                 Pay with Klarna
-              </a>
+              </button>
             </div>
 
             <p style="font-size: 13px; color: rgba(255,255,255,0.4); font-family: 'IBM Plex Mono', monospace; max-width: 450px;">
@@ -1515,9 +1512,9 @@
       <p class="final-cta-subtitle">
         Stop watching from the sidelines. Join the program and start scaling campaigns with proven systems and expert mentorship.
       </p>
-      <a href="https://whop.com/checkout/plan_WHbBzMwnO6Cqe?a=fba" class="cta-button cta-button-large">
+      <button onclick="openConfirmationModal()" class="cta-button cta-button-large">
         Apply for Mentorship — $2,500
-      </a>
+      </button>
     </div>
   </section>
 
@@ -1536,6 +1533,72 @@
       <div class="footer-copyright">© 2025 MABAC media</div>
     </div>
   </footer>
+
+  <!-- Confirmation Modal (Before Apply) -->
+  <div class="contract-modal" id="confirmationModal" onclick="closeConfirmationModal(event)">
+    <div class="contract-modal-content" onclick="event.stopPropagation()" style="max-width: 600px;">
+      <div class="contract-modal-header">
+        <h3><span>⚠️</span> Before You Apply</h3>
+        <button class="contract-modal-close" onclick="closeConfirmationModal(event)">×</button>
+      </div>
+      <div class="contract-modal-body">
+        <div class="contract-content">
+          <div class="contract-highlight" style="margin-top: 0;">
+            <h2 style="margin-top: 0; font-size: 24px;">Important: Read This First</h2>
+            <p style="font-size: 16px; line-height: 1.8;">
+              Before applying for the mentorship program, you <strong>must</strong> visit our learning portal to understand the complete program structure, requirements, and expectations.
+            </p>
+          </div>
+
+          <div style="margin: 32px 0; padding: 24px; background: rgba(255,255,255,0.03); border-left: 3px solid #28DC50; border-radius: 8px;">
+            <h3 style="font-size: 18px; margin-bottom: 12px; color: #28DC50;">📚 Step 1: Visit the Learning Portal</h3>
+            <p style="margin-bottom: 16px; color: rgba(255,255,255,0.8);">
+              Review the complete curriculum, watch preview videos, and understand what you'll be learning.
+            </p>
+            <a 
+              href="https://learn.mabacmedia.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-button"
+              style="display: inline-block; margin-bottom: 0;"
+            >
+              Visit Learning Portal →
+            </a>
+          </div>
+
+          <div style="margin: 32px 0; padding: 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">
+            <p style="font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 16px;">
+              ✓ Understand the complete curriculum<br>
+              ✓ Review success requirements<br>
+              ✓ Watch preview content<br>
+              ✓ Verify this is the right fit for you
+            </p>
+          </div>
+
+          <div class="contract-warning" style="margin-top: 24px;">
+            <p style="margin: 0;"><strong>After reviewing the learning portal, come back here and confirm you're ready to apply.</strong></p>
+          </div>
+
+          <div style="margin-top: 32px; display: flex; gap: 12px; flex-direction: column;">
+            <button 
+              onclick="confirmAndApply()" 
+              class="cta-button cta-button-large"
+              style="width: 100%; background: #28DC50; border-color: #28DC50; color: #000;"
+            >
+              ✓ I've Reviewed — Proceed to Application
+            </button>
+            <button 
+              onclick="closeConfirmationModal(event)" 
+              class="cta-button cta-button-outline"
+              style="width: 100%;"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Contract Modals -->
   <div class="contract-modal" id="agreementModal" onclick="closeContractModal(event, 'agreement')">
@@ -1567,6 +1630,34 @@
   </div>
 
   <script>
+    // Confirmation Modal Functions
+    function openConfirmationModal() {
+      const modal = document.getElementById('confirmationModal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConfirmationModal(event) {
+      event.stopPropagation();
+      const modal = document.getElementById('confirmationModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function confirmAndApply() {
+      // Redirect to Whop application
+      window.location.href = 'https://whop.com/checkout/plan_WHbBzMwnO6Cqe?a=fba';
+    }
+
+    function openKlarnaConfirmation() {
+      const confirmed = confirm('Have you reviewed the learning portal at learn.mabacmedia.com?\n\nClick OK to proceed with Klarna payment, or Cancel to review the portal first.');
+      if (confirmed) {
+        window.location.href = 'https://buy.stripe.com/5kQaEX0LlexF36tgIv9EI0f';
+      } else {
+        window.open('https://learn.mabacmedia.com/', '_blank');
+      }
+    }
+
     // Contract content data
     const contractContent = {
       agreement: `
